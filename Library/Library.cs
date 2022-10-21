@@ -9,18 +9,16 @@ namespace Library
 {
     public class Library : ILibrary
     {
-        private static Library? instance;
+        private Library() { }
 
-        public Library(){}
+        private static readonly Lazy<Library> lazy =
+                new Lazy<Library>(() => new Library());
 
-        public static Library getInstance()
-        {
-            if (instance == null)
-                instance = new Library();
-            return instance;
-        }
+        public static Library Source { get { return lazy.Value; } }
+
 
         List<Book> Books { set; get; } = new();
+
 
         public void addBook(Book book) //bool?????????
         {

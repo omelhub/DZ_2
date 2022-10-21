@@ -4,7 +4,7 @@ Book book0 = new() { Title = "1984", Author = "Дж. Оруэлл", Year = 1948 
 Book book1 = new() { Title = "451 градус по Фаренгейту", Author = "Рэй Брэдбери", Year = 1953 };
 Book book2 = new() { Title = "Мы", Author = "Замятин", Year = 1920 };
 
-Library.Library library = new();
+Library.Library library = Library.Library.Source;
 library.addBook(book0);
 library.addBook(book1);
 library.addBook(book2);
